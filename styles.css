@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f3f3;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+h1 {
+    color: #e91e63;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: #e91e63;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.heart-container {
+    width: 100px;
+    margin: 0 auto;
+}
+
+.heart {
+    fill: #e91e63;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.message {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.message p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.highlight {
+    background-color: #ffccd5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #e91e63;
+}
+
+.reasons {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.reasons ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.reasons li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.reasons li:before {
+    content: "♥";
+    position: absolute;
+    left: 0;
+    color: #e91e63;
+}
+
+.promise-box {
+    background-color: #e91e63;
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.promise-box h3 {
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: white;
+    color: #e91e63;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    text-align: center;
+    color: #888;
+    margin-top: 2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+#thanksMessage {
+    margin-top: 1rem;
+    font-weight: bold;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Card flip animation */
+.card {
+    width: 300px;
+    height: 100px;
+    perspective: 1000px;
+    margin: 2rem auto;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.card-front {
+    background-color: #ffccd5;
+    color: #e91e63;
+}
+
+.card-back {
+    background-color: #e91e63;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Flower animation */
+.flower-container {
+    width: 100px;
+    height: 100px;
+    margin: 2rem auto;
+}
+
+.flower {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.petal {
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    background-color: #ffccd5;
+    border-radius: 100% 0 100% 0;
+    top: 0;
+    left: 50%;
+    transform-origin: bottom center;
+    margin-left: -15px;
+    animation: sway 5s infinite ease-in-out;
+}
+
+.petal:nth-child(1) { transform: rotate(0deg); }
+.petal:nth-child(2) { transform: rotate(72deg); }
+.petal:nth-child(3) { transform: rotate(144deg); }
+.petal:nth-child(4) { transform: rotate(216deg); }
+.petal:nth-child(5) { transform: rotate(288deg); }
+
+.center {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #e91e63;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes sway {
+    0%, 100% { transform-origin: bottom center; transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(5deg) translateY(-2px); }
+    75% { transform: rotate(-5deg) translateY(-2px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .message, .reasons {
+        padding: 1.5rem;
+    }
+    
+    .card {
+        width: 250px;
+    }
+}
+
